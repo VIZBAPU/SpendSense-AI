@@ -5,7 +5,7 @@ Scoring: **Likelihood (L)** and **Impact (I)** from 1 (low) to 3 (high).
 
 | ID | Risk | L | I | Score | Mitigation | Owner | Status |
 |---|---|---|---|---|---|---|---|
-| R-01 | **Time overrun.** 2 days is tight for docs + backend + frontend + agent + tests (Day 2 is estimated at ~12h). | 3 | 3 | **9** | Strict cut list (05-project-plan); time-box each issue; build core flow first, agent last; skip polish. | Vish | Open |
+| R-01 | **Time overrun.** 3 days is tight for docs + backend + frontend + agent + tests, with Vish new to coding (Day 3 is estimated at ~11.5h). | 3 | 3 | **9** | Strict cut list (05-project-plan); time-box each issue; build core flow first, agent last; skip polish. | Vish | Open |
 | R-02 | **Scope creep.** New ideas mid-build ("let's add budgets…"). | 2 | 3 | **6** | Anything new goes into a "later" issue, not the sprint. Scope changes only through Vish's sign-off. | Vish | Open |
 | R-03 | **Local LLM too slow on laptop CPU**, so first upload exceeds 120 s. | 2 | 2 | 4 | Rules-first means few LLM calls; batch several merchants per prompt; cache per merchant; pick a small 3–4B model. | Claude | Open |
 | R-04 | **Small model accuracy below 90%.** | 2 | 3 | **6** | Strong seed rules for common merchants; few-shot examples in the prompt; enum-restricted structured output; corrections become rules; measure early with the eval (US-14). | Claude | Open |

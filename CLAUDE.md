@@ -37,12 +37,16 @@ Claude acts as senior engineer + mentor: **teach as we go, don't just generate c
 - One GitHub issue at a time, on its own branch, with Conventional Commits.
 
 ## How to work with Vish
-- **Vish writes ALL code and runs ALL commands** (git, gh, docker, deploys). Claude
-  only creates/edits Markdown (`.md`) files: docs, ADRs, issue text, README, etc.
-  For code, Claude explains the approach, gives step-by-step instructions and hints,
-  shows short illustrative snippets in chat only when Vish is stuck or asks, and
-  reviews Vish's code (reading files and running read-only checks like tests/lint is OK).
-  Never create or edit non-Markdown files in the repo.
+- **Guided pair-programming.** Vish creates every code file and writes/pastes the code
+  themselves; Vish runs all commands. Claude only creates/edits Markdown (`.md`) files
+  (docs, ADRs, issue text, README). Never create or edit non-Markdown files in the repo.
+- For each code step Claude gives, in chat: (1) which file to create/open and where,
+  (2) the exact code to write, in small chunks, (3) **what** it does, **how** it works
+  line by line for anything non-obvious, and **why** we do it this way (and the
+  alternative we didn't pick), (4) how to run/verify it. Vish is new to coding
+  ("vibe coder"), so assume no prior knowledge: explain terms the first time they appear.
+- Claude reviews Vish's files after each step (reading files and running read-only
+  checks like tests/lint is OK) and points out mistakes rather than silently fixing them.
 - Vish prefers **GUI tools over CLI**: VS Code (editing, terminal for running the app),
   **GitHub Desktop** (branch, commit, push, pull, open PR), and the **GitHub website**
   (issues, project board, PR review/merge). Give click-by-click steps for those; only
@@ -119,14 +123,16 @@ Finally: 3 honest XYZ-format resume bullets using only real numbers from this pr
 plus 5 likely interview questions with answer notes.
 
 ## Status
-- Current phase: **Phase 1 — complete, awaiting Vish's sign-off.** Docs 01–06 done;
-  GitHub has 5 labels, milestones Sprint 1 (#1) / Sprint 2 (#2), issues #1–#17
-  (issue #N = US-N), Project board #4 "SpendSense" (Todo / In Progress / In Review / Done).
+- Current phase: **Phase 2 — Design (in progress).** Phase 1 signed off 2026-10-25.
+  GitHub has 5 labels, milestones Sprint 1 / Sprint 2 / Sprint 3 (Sprint 3 being added
+  by Vish), issues #1–#17 (issue #N = US-N), Project board #4 "SpendSense"
+  (Todo / In Progress / In Review / Done).
 - Repo: https://github.com/VIZBAPU/spendsense-ai (public), local at D:\project\spendsense-ai
   (the old copy at D:\Projects\Spendsense is obsolete, don't use it)
 - Note: C:\Users\vishw (home folder) is itself a git repo. Always check the prompt path
   before git commands.
-- Milestones are Sprint 1–2 (not 3). Stories US-01..US-17 are in docs/03-user-stories.md.
+- 3 sprints = 3 milestones; sprint contents in docs/05-project-plan.md. Stories US-01..US-17
+  are in docs/03-user-stories.md.
 - Decisions so far:
   - Target user: freelancer mixing personal and business spending
   - CSV format: **only Format B** (separate Debit/Credit columns). Overrides "two
@@ -142,16 +148,15 @@ plus 5 likely interview questions with answer notes.
   - Must-have dashboard views (in priority order): spending by category, monthly
     trends, income vs expenses. Top merchants + flagged-items widget go on the cut list.
   - Demo protection: rate limit per IP + hard daily cap on LLM calls (no passcode)
-  - Timeline: **cut from 3 days to 2 days**
+  - Timeline: **3 days, 3 one-day sprints, full scope** (briefly cut to 2 days, then
+    restored at Phase 1 sign-off because Vish writes the code with guidance)
   - "Done" = runs locally via Docker Compose, tests + CI (GitHub Actions) green,
     **agent included**. **No AWS deployment** (Lambda/API Gateway/S3/CloudFront/
     Secrets Manager/SAM/OIDC deploy are out of scope). Needs an ADR in Phase 2
     ("Defer cloud deployment"). Phase 5 shrinks to ci.yml + local release/tag.
-  - Sprints: 2 one-day sprints (not 3)
   - Budget: **$0**. Vish doesn't want to spend anything. Anthropic API dropped
     because it has no free tier.
   - LLM: **Ollama, local open model, running as a Docker Compose service**, via
     LangChain (`langchain-ollama`, dependency approved). Model choice in Phase 2.
     Stack change, ADR to be written in Phase 2.
   - Accuracy target: >= 90% overall categorization accuracy vs ground truth
-  - Open: timeline (Vish now writes all code, so 2 days is too short; extend or cut)

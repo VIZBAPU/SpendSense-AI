@@ -5,7 +5,7 @@
 | **Owner / developer** | Vish |
 | **Mentor / reviewer** | Claude (senior engineer role) |
 | **Audience** | Recruiters and interviewers for banking/fintech roles |
-| **Timebox** | 2 working days (2 one-day sprints) |
+| **Timebox** | 3 working days (3 one-day sprints) |
 | **Budget** | $0 |
 | **Status** | Draft, awaiting sign-off |
 
@@ -69,7 +69,7 @@ month?", "what did I spend on business?" or "was I double-charged?".
 
 ## 5. Constraints
 
-- **Time:** 2 days, including documentation and testing.
+- **Time:** 3 days, including documentation and testing. Vish writes the code with guidance.
 - **Cost:** $0. Only free/open-source tools; the public GitHub repo gets free Actions minutes.
 - **Stack:** fixed in CLAUDE.md; changes only through an approved ADR.
 - **Hardware:** the local LLM must run on Vish's laptop (CPU, limited RAM).
