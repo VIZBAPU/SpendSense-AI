@@ -43,6 +43,10 @@ Claude acts as senior engineer + mentor: **teach as we go, don't just generate c
   shows short illustrative snippets in chat only when Vish is stuck or asks, and
   reviews Vish's code (reading files and running read-only checks like tests/lint is OK).
   Never create or edit non-Markdown files in the repo.
+- Vish prefers **GUI tools over CLI**: VS Code (editing, terminal for running the app),
+  **GitHub Desktop** (branch, commit, push, pull, open PR), and the **GitHub website**
+  (issues, project board, PR review/merge). Give click-by-click steps for those; only
+  use git/gh commands when there's no reasonable GUI way, and say why.
 - Before coding any task, explain the plan in 3-5 lines and wait for OK.
 - After each task, explain it in plain English, then ask 2 interview questions and
   check the answers.
@@ -115,8 +119,13 @@ Finally: 3 honest XYZ-format resume bullets using only real numbers from this pr
 plus 5 likely interview questions with answer notes.
 
 ## Status
-- Current phase: **Phase 1 — docs 01–06 drafted, awaiting Vish's review; GitHub setup
-  (step 3) waiting on repo name + project folder**
+- Current phase: **Phase 1 — complete, awaiting Vish's sign-off.** Docs 01–06 done;
+  GitHub has 5 labels, milestones Sprint 1 (#1) / Sprint 2 (#2), issues #1–#17
+  (issue #N = US-N), Project board #4 "SpendSense" (Todo / In Progress / In Review / Done).
+- Repo: https://github.com/VIZBAPU/spendsense-ai (public), local at D:\project\spendsense-ai
+  (the old copy at D:\Projects\Spendsense is obsolete, don't use it)
+- Note: C:\Users\vishw (home folder) is itself a git repo. Always check the prompt path
+  before git commands.
 - Milestones are Sprint 1–2 (not 3). Stories US-01..US-17 are in docs/03-user-stories.md.
 - Decisions so far:
   - Target user: freelancer mixing personal and business spending
@@ -145,4 +154,4 @@ plus 5 likely interview questions with answer notes.
     LangChain (`langchain-ollama`, dependency approved). Model choice in Phase 2.
     Stack change, ADR to be written in Phase 2.
   - Accuracy target: >= 90% overall categorization accuracy vs ground truth
-  - Open: GitHub repo name + visibility, real project folder
+  - Open: timeline (Vish now writes all code, so 2 days is too short; extend or cut)
