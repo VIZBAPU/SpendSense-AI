@@ -123,7 +123,9 @@ Finally: 3 honest XYZ-format resume bullets using only real numbers from this pr
 plus 5 likely interview questions with answer notes.
 
 ## Status
-- Current phase: **Phase 2 — Design (in progress).** Phase 1 signed off 2026-10-25.
+- Current phase: **Phase 2 — Design: docs 07–11 + ADR-001..007 drafted on branch
+  `docs/phase-2-design`, awaiting Vish's review, dependency approval and sign-off.**
+  Phase 1 signed off 2026-10-25.
   GitHub has 5 labels, milestones Sprint 1 / Sprint 2 / Sprint 3 (Sprint 3 being added
   by Vish), issues #1–#17 (issue #N = US-N), Project board #4 "SpendSense"
   (Todo / In Progress / In Review / Done).
@@ -160,3 +162,12 @@ plus 5 likely interview questions with answer notes.
     LangChain (`langchain-ollama`, dependency approved). Model choice in Phase 2.
     Stack change, ADR to be written in Phase 2.
   - Accuracy target: >= 90% overall categorization accuracy vs ground truth
+  - Phase 2 design decisions (2026-10-25):
+    - D1 Upload = **background job**: rows saved + rules applied in the request; LLM
+      categorization + anomaly checks run in a FastAPI BackgroundTask; UI polls
+      `GET /uploads/{id}` for status (ADR-007)
+    - D2 Merchant rules = **"contains" patterns, longest match wins**
+    - D3 Hardware: 16 GB RAM, no GPU. Default model ~7–8B instruct with tool calling,
+      configurable via `OLLAMA_MODEL`; fall back to ~3B if too slow (ADR-006)
+    - Keep docs/07-architecture.md as the design blueprint; in Phase 6, add a
+      GitDiagram-generated diagram of the finished code to the README and compare.
