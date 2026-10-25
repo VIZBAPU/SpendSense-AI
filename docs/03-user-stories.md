@@ -5,7 +5,7 @@
   wants to know where the money goes.
 - **Developer** (Vish): builds, tests and runs the project.
 
-Each story becomes one GitHub issue. Est = rough effort in hours, including the
+Each story is one GitHub issue (issue #N = US-N). Est = original effort in hours (see 05-project-plan for the adjusted estimates), including the
 explain-and-quiz step.
 
 ---
@@ -52,7 +52,7 @@ are loaded without typing anything.
   `merchant_normalized` is filled.
 
 ### US-04 — Categorize transactions automatically
-*Freelancer · Sprint 1 · feature · Est 2h · FRs: FR-05, FR-06, FR-07, FR-09, NFR-04, NFR-06, NFR-10*
+*Freelancer · Sprint 2 · feature · Est 2h · FRs: FR-05, FR-06, FR-07, FR-09, NFR-04, NFR-06, NFR-10*
 
 **As a** freelancer **I want** each transaction categorized automatically **so that**
 I don't have to tag hundreds of rows.
@@ -124,7 +124,7 @@ I know whether I'm saving or burning money.
   (debits, excluding Transfers) per month, plus the net amount.
 
 ### US-10 — Review and correct transactions
-*Freelancer · Sprint 2 · feature · Est 1.5h · FRs: FR-08, FR-19*
+*Freelancer · Sprint 3 · feature · Est 1.5h · FRs: FR-08, FR-19*
 
 **As a** freelancer **I want** to fix a wrong category **so that** the app learns and
 gets it right next time.
@@ -137,7 +137,7 @@ gets it right next time.
   new rule, with no LLM call.
 
 ### US-11 — Upload from the browser
-*Freelancer · Sprint 2 · feature · Est 1h · FRs: FR-01, NFR-12*
+*Freelancer · Sprint 3 · feature · Est 1h · FRs: FR-01, NFR-12*
 
 **As a** freelancer **I want** an upload page **so that** I don't need to use an API tool.
 
@@ -146,7 +146,7 @@ gets it right next time.
 - **Given** a rejected file, **then** I see the row-level errors in a readable list.
 
 ### US-12 — Review flags
-*Freelancer · Sprint 2 · feature · Est 0.5h · FRs: FR-15*
+*Freelancer · Sprint 3 · feature · Est 0.5h · FRs: FR-15*
 
 **As a** freelancer **I want** a page listing all flagged charges **so that** I can
 review them in one place.
@@ -155,7 +155,7 @@ review them in one place.
 - **When** I dismiss a flag, **then** it disappears from the list and stays dismissed after a refresh.
 
 ### US-13 — Ask about my spending
-*Freelancer · Sprint 2 · feature · Est 2h · FRs: FR-22, NFR-05, NFR-10*
+*Freelancer · Sprint 2–3 · feature · Est 2h · FRs: FR-22, NFR-05, NFR-10*
 
 **As a** freelancer **I want** to ask questions in plain English **so that** I get
 answers without building reports.
