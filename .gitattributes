@@ -1,0 +1,2 @@
+# Store text files with LF line endings so Linux containers and CI behave the same as Windows
+* text=auto eol=lf

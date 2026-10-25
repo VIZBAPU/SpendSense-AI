@@ -1,0 +1,38 @@
+# Secrets - never commit
+.env
+.env.*
+!.env.example
+
+# Python
+__pycache__/
+*.py[cod]
+.venv/
+venv/
+.pytest_cache/
+.ruff_cache/
+.mypy_cache/
+.coverage
+htmlcov/
+*.egg-info/
+
+# Node / frontend
+node_modules/
+dist/
+coverage/
+*.tsbuildinfo
+
+# Generated data (recreate with the synthetic data generator)
+data/generated/
+
+# Editors / OS
+.vscode/
+.idea/
+.vs/
+.DS_Store
+Thumbs.db
+
+# Issue drafts (used once for GitHub setup)
+.issue-drafts/
+
+# Claude Code local settings
+.claude/settings.local.json
