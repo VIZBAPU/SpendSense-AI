@@ -169,5 +169,7 @@ plus 5 likely interview questions with answer notes.
     - D2 Merchant rules = **"contains" patterns, longest match wins**
     - D3 Hardware: 16 GB RAM, no GPU. Default model ~7–8B instruct with tool calling,
       configurable via `OLLAMA_MODEL`; fall back to ~3B if too slow (ADR-006)
+    - Dependencies approved (2026-10-25): uvicorn, psycopg[binary], python-multipart,
+      pydantic-settings, httpx, pytest-cov, react-router-dom, @testing-library/react, jsdom
     - Keep docs/07-architecture.md as the design blueprint; in Phase 6, add a
       GitDiagram-generated diagram of the finished code to the README and compare.
