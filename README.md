@@ -33,6 +33,23 @@ Bank statement categorizer and anomaly detector with a local LLM (synthetic data
 | `db` | 5432 | PostgreSQL 16 |
 | `ollama` | 11434 | Local LLM server |
 
+## Generate synthetic data
+
+All data is fake. The generator writes 6 months of a freelancer's transactions (~570 rows)
+with planted anomalies and an answer key:
+
+```bash
+cd backend
+.venv\Scripts\python -m scripts.generate_data --seed 42
+```
+
+Output (gitignored) in `data/generated/`:
+- `statement.csv`: Format B bank export (`Date, Description, Debit, Credit`, dates `MM/DD/YYYY`)
+- `ground_truth.csv`: the correct category for every row
+- `anomalies.json`: the 12 planted anomalies (3 × z-score, duplicate, new-merchant, subscription increase)
+
+The same seed always produces the same files.
+
 ## Backend checks (lint + tests)
 
 ```bash
