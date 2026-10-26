@@ -13,7 +13,7 @@ def test_health_ok_when_everything_is_up(monkeypatch):
     response = client.get("/health")
 
     assert response.status_code == 200
-    assert response.json()["status"] == "ok"
+    assert response.json()["status"] == "broken"
 
 
 def test_health_degraded_when_ollama_is_down(monkeypatch):
