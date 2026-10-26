@@ -123,8 +123,11 @@ Finally: 3 honest XYZ-format resume bullets using only real numbers from this pr
 plus 5 likely interview questions with answer notes.
 
 ## Status
-- Current phase: **Phase 2 — Design: docs 07–11 + ADR-001..007 drafted on branch
-  `docs/phase-2-design`, awaiting Vish's review, dependency approval and sign-off.**
+- Current phase: **Phase 3, Sprint 1. Phase 2 signed off + merged (PR #18).**
+  Issue #1 (repo skeleton) on branch `feat/1-repo-skeleton`: all 4 services run,
+  /health ok, 3 tests pass, ruff clean; PR pending.
+  Follow-up noted: Starlette warns `httpx` with TestClient is deprecated in favour of
+  `httpx2` (new dependency, needs approval; not urgent).
   Phase 1 signed off 2026-10-25.
   GitHub has 5 labels, milestones Sprint 1 / Sprint 2 / Sprint 3 (Sprint 3 being added
   by Vish), issues #1–#17 (issue #N = US-N), Project board #4 "SpendSense"
