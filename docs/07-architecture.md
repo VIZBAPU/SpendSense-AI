@@ -66,6 +66,9 @@ backend/
 │       ├── tools.py         # 3 read-only tools
 │       └── agent.py         # tool-calling loop (max 5 calls)
 ├── alembic/                 # DB migrations
+├── scripts/
+│   ├── generate_data.py     # synthetic statement + ground truth (US-02)
+│   └── eval_accuracy.py     # accuracy eval (US-14)
 ├── tests/                   # pytest: unit + integration (real Postgres)
 └── pyproject.toml
 frontend/
@@ -75,10 +78,11 @@ frontend/
 │   ├── components/          # charts, tables, forms
 │   └── main.tsx
 └── package.json
-scripts/
-├── generate_data.py         # synthetic statement + ground truth (US-02)
-└── eval_accuracy.py         # accuracy eval (US-14)
+data/generated/              # generator output (gitignored)
 ```
+
+> Scripts live in `backend/scripts/` (not a root `scripts/` folder) so they share the
+> backend's Python environment and their tests run in CI. Decided while starting US-02.
 
 **Rule of thumb:** routers handle HTTP (parse input, return status codes), services hold
 the logic, and the db layer holds the tables. That separation lets services be unit-tested
